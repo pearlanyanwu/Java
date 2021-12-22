@@ -1,0 +1,161 @@
+package PJ1;
+
+public class Fraction implements FractionInterface, Comparable<Fraction>
+{
+    // integer numerator and denominator
+    private	int num;
+    private	int den;
+
+    public Fraction()
+    {
+        // implement this method!
+        // set fraction to default = 0/1
+        num = 0;
+        den = 1;
+    }
+    public Fraction(int num, int den)
+    {
+        // implement this method!
+        // return FractionException if initial denominator is 0
+        this.num = num;
+        if (den == 0) {
+            throw new FractionException("Denominator is zero.");
+        } else {
+            this.den = den;
+        }
+    }	// end constructor
+
+    public void setFraction(int num, int den)
+    {
+        // implement this method!
+        // return FractionException if initial denominator is 0
+        this.num = num;
+        if (den == 0) {
+            throw new FractionException("Denominator is zero.");
+        } else {
+            this.den = den;
+        }
+    }	// end setFraction
+
+
+    public FractionInterface simplify()
+    {
+        // implement this method!
+        //
+        // 2. Reduce the number: compute GCD of num & den
+        //    num/GCD and den/GCD
+        int gcd;
+        gcd = GCD(num, den); // GCD() from 'private methods' section.
+        num = num/gcd;
+        den = den/gcd;
+
+        // 1. Adjust the signs of the num and den so that the numerator's sign
+        //    is the sign of the fraction and the den's sign is positive value.
+        //    EX: [3/-5] --> [-3/5]
+        if (num > 0 & den < 0) {
+            num = -num; // if num is pos, this line makes it neg.
+            den = -den; // if den is neg, this line makes it pos.
+        }
+        // return this fraction object
+        return this;
+    }
+
+    public double toDouble()
+    {
+        // implement this method!
+        // return double floating point value
+        double dfpv;
+        dfpv = (double) num/den;
+        return dfpv;
+    }	// end toDouble
+
+    // for add(), subtract(), multiply(), and divide() methods:
+    // a/b = num/den
+    // c/d = secFrac.num/secFrac.den
+    public FractionInterface add(FractionInterface secondFraction)
+    {
+        // implement this method!
+        // a/b + c/d is (ad + cb)/(bd)
+        Fraction secFrac = (Fraction) secondFraction; // "downcast reference parameter FractionInterface to Fraction"
+        int numerator = ((num * secFrac.den) + (secFrac.num * den));
+        int denominator = (den * secFrac.den);
+        Fraction sum = new Fraction(numerator, denominator);
+        sum.simplify(); // call simplify() to act on the sum [apply gcd & reduce terms]
+        return sum;
+    }	// end add
+
+    public FractionInterface subtract(FractionInterface secondFraction)
+    {
+        // implement this method!
+        // a/b - c/d is (ad - cb)/(bd)
+        Fraction secFrac = (Fraction) secondFraction; // "downcast reference parameter FractionInterface to Fraction"
+        int numerator = ((num * secFrac.den) - (secFrac.num * den));
+        int denominator = (den * secFrac.den);
+        Fraction diff = new Fraction(numerator, denominator);
+        diff.simplify();  // call simplify() to act on the difference [apply gcd & reduce terms]
+        return diff;
+    }	// end subtract
+
+    public FractionInterface multiply(FractionInterface secondFraction)
+    {
+        // implement this method!
+        // a/b * c/d is (ac)/(bd)
+        Fraction secFrac = (Fraction) secondFraction; // "downcast reference parameter FractionInterface to Fraction"
+        int numerator = (num * secFrac.num);
+        int denominator = (den * secFrac.den);
+        Fraction prod = new Fraction(numerator, denominator);
+        prod.simplify();  // call simplify() to act on the product [apply gcd & reduce terms]
+        return prod;
+    }	// end multiply
+
+    public FractionInterface divide(FractionInterface secondFraction)
+    {
+        // implement this method!
+        // return FractionException if secondFraction is 0
+        // a/b / c/d is (ad)/(bc)
+        Fraction secFrac = (Fraction) secondFraction; // "downcast reference parameter FractionInterface to Fraction"
+        if (den == 0 || secFrac.num == 0) {
+            throw new FractionException("Divisor is zero.");
+        } else {
+            int numerator = (num * secFrac.den);
+            int denominator = (den * secFrac.num);
+            Fraction quot = new Fraction(numerator, denominator);
+            quot.simplify();  // call simplify() to act on the quotient [apply gcd & reduce terms]
+            return quot;
+        }
+    }	// end divide
+
+
+    public boolean equals(Object other)
+    {
+        // implement this method!
+        Fraction secFrac = (Fraction) other; // "downcast reference parameter Object to Fraction"
+        // set both fractions equal to each other and cross multiply
+        // COMPARE FIRST TO FIRST:  [-21/2 = -21/2] --> [-42 == -42]. (equal)
+        // COMPARE FIRST TO SECOND: [-21/2 = 42/-4] --> [+84 == +84]. (equal)
+        // COMPARE FIRST TO SECOND: [-21/2 = -42/-4] --> [+84 != -84]. (not equal)
+        if ((num * secFrac.den) == (den * secFrac.num)) { // compute (ad == bc)
+            return true;
+        } else {
+            return false;
+        }
+    }   // end equals
+
+
+    public int compareTo(Fraction other)
+    {
+        // implement this method!
+        // set both fractions equal to each other and cross multiply
+        // COMPARE FIRST TO SECOND: [-21/2 = 42/-4] --> [84 - 84] == 0. (they are equal.)
+        // COMPARE FIRST TO SECOND: [-21/2 = 7/8] --> [-168 - 14] == -#. (so, -21/2 is less than 7/8.)
+        // COMPARE SECOND TO FIRST: [7/8 = -21/2] --> [14 - -168] == +#. (so, 7/8 is greater than -21/2.)
+        int result;
+        result = ((num * other.den) - (other.num * den)); // compute (ad - cb) for 0, -#, or +#
+        return result;
+    }   // end compareTo
+
+
+    public String toString()
+    {
+        return num + "/" + den;
+    }   // end toString
