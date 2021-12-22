@@ -1,0 +1,92 @@
+package SimplePackage;
+
+import java.util.*;
+
+public class Assignment0 {
+    // Data fields
+    static int[] A;   // integer Array A
+    static int size;  // size of array
+
+    public static void main(String[] args) {
+        // Step 1. set up integer array A
+        System.out.println("Enter array size: ");
+        Scanner input = new Scanner(System.in); // user input.
+        size = input.nextInt();
+        A = new int[size];
+        for (int i = 0; i < size; i++) {
+            System.out.println("Enter integer " + (i + 1) + ": ");
+            A[i] = input.nextInt();
+        }
+
+        // Step 2. call display() method to display array data
+        display(A);
+        System.out.println("=====================");
+
+        // Step 3. use methods to findMaximum() and findMinimum()
+        //         to find maximum and minimum values in array
+        //         You need to implement these two methods
+        int temp = findMaximum(A);
+        System.out.println("Maximum value is: " + temp);
+
+        // use A directly in findMinimum method, print return value directly
+        System.out.println("Minimum value is: " + findMinimum());
+        System.out.println("======================");
+
+        // Step 4. use Selection sort algorithm to sort data in A.
+        //         You need to implement the selectionSort() method
+        selectionSort(A);
+
+        display(A); // display sorted data
+
+        // Step 5. display maximum and minimum values in sorted array
+        System.out.println("Maximum value is: " + A[size - 1]);
+        System.out.println("Minimum value is: " + A[0]);
+        System.out.println("======================");
+    }
+
+    // display content of integer array
+    // this method is done.
+    static void display(int[] B) {
+        for (int i = 0; i < B.length; i++) {
+            System.out.println("array value " + i + ": " + B[i]);
+        }
+    }
+
+    // find maximum value in array. Return the maximum value
+    static int findMaximum(int[] B) {
+        int max = B[0]; // initialize the first index as the max.
+        for (int i = 1; i < B.length; i++) {
+            if (B[i] > max) { // compares every index with the one before it.
+                max = B[i]; // this is the max value of the array.
+            }
+        }
+        return max;
+    }
+
+    // find minimum value in array. Return the minimum value
+    // Note: access array A (data field) directly
+    static int findMinimum() {
+        int min = A[0]; // initialize the first index as the min.
+        for (int i = 1; i < A.length; i++) {
+            if (A[i] < min) { // compare every index with the one before it.
+                min = A[i]; // this is the min value of the array.
+            }
+        }
+        return min;
+    }
+
+    // Selection sort method
+    static int[] selectionSort(int[] B) {
+        int temp;
+        for (int i = 0; i < size; i++) { // for the leftmost index.
+            for (int j = i + 1; j < size; j++) { // for the rightmost index.
+                if (B[i] > B[j]) {
+                    temp = B[j]; // set the rightmost index to "temp".
+                    B[j] = B[i]; // swap order of values when necessary.
+                    B[i] = temp;
+                }
+            }
+        }
+        return B;
+    }
+}
