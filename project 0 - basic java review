@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Assignment0 {
     // Data fields
-    static int[] A;   // integer Array A
-    static int size;  // size of array
+    static int[] A;
+    static int size;
 
     public static void main(String[] args) {
         // Step 1. set up integer array A
         System.out.println("Enter array size: ");
-        Scanner input = new Scanner(System.in); // user input.
+        Scanner input = new Scanner(System.in);
         size = input.nextInt();
         A = new int[size];
         for (int i = 0; i < size; i++) {
@@ -36,7 +36,7 @@ public class Assignment0 {
         //         You need to implement the selectionSort() method
         selectionSort(A);
 
-        display(A); // display sorted data
+        display(A);
 
         // Step 5. display maximum and minimum values in sorted array
         System.out.println("Maximum value is: " + A[size - 1]);
