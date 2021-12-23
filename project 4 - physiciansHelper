@@ -38,7 +38,7 @@ public class PhysiciansHelper {
 		// for each symptom
 		// if it is already in the map, insert disease into related list
 		// if it is not already in the map, create a new list with the disease
-
+--------------------------------------------------------------------------------------------------------
 		while (file.hasNextLine()) { // loops through input
 			String thisInput = file.nextLine().trim().toLowerCase(); // makes every character lowercase
 
@@ -65,7 +65,7 @@ public class PhysiciansHelper {
 			System.out.println(symptom + " = " + Arrays.toString(symptomChecker.get(symptom).toArray()));
 		}
 	} // end processDatafile
-
+--------------------------------------------------------------------------------------------------------
 	/* Read patient's symptoms in a line and adds them to the list.
 	 * Input format: Symptom, Symptom, Symptom,...
 	 * Shows diseases that match a given number of the symptoms. */
@@ -107,7 +107,7 @@ public class PhysiciansHelper {
 		}
 
 		// Step 3: display patientSymptoms list
-
+--------------------------------------------------------------------------------------------------------
 		System.out.println("--------------------------------------------------------");
 		System.out.println("list of symptoms: " + Arrays.toString(patientSymptoms.toArray()));
 
