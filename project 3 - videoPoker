@@ -34,16 +34,13 @@ import java.util.*;
  *
  */
 
-
 /* This is the video poker game class.
  * It uses OneDeck and Card objects to implement video poker game.
  * Please do not modify any data fields or defined methods
  * You may add new data fields and methods
  * Note: You must implement defined methods
  */
-
-
-
+ 
 public class VideoPoker {
 
     // default constant values
@@ -99,6 +96,7 @@ public class VideoPoker {
      * Must print yourHandType (default is "Sorry, you lost") at the end of function.
      * This can be checked by testCheckHands() and main() method.
      */
+     
     private void checkHands() {
         // implement this method
         if (royalFlush()) {
@@ -137,7 +135,7 @@ public class VideoPoker {
      *   add additional private methods here ....
      *
      *************************************************/
-
+--------------------------------------------------------------------------------------------------------
     private void getBet() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Place a bet: ");
@@ -153,17 +151,17 @@ public class VideoPoker {
         }
 
     }
-
+--------------------------------------------------------------------------------------------------------
     private void showBalance() {
         System.out.println("Current Balance: $" + playerBalance);
     }
-
+--------------------------------------------------------------------------------------------------------
     private void exitGame() {
         showBalance();
         System.out.println("Bye!");
         System.exit(0);
     }
-
+--------------------------------------------------------------------------------------------------------
     private void playNewGame() throws PlayingCardException {
         System.out.println("Play again? (y or n): ");
         Scanner scanner = new Scanner(System.in);
@@ -179,7 +177,7 @@ public class VideoPoker {
             playNewGame();
         }
     }
-
+--------------------------------------------------------------------------------------------------------
     private void seePayoutTable() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Would you like to see payout table? (y or n)");
@@ -192,7 +190,7 @@ public class VideoPoker {
             showPayoutTable();
         }
     }
-
+--------------------------------------------------------------------------------------------------------
     private void deal() {
         try {
             playerHand = thisDeck.deal(numberCards);
@@ -200,7 +198,7 @@ public class VideoPoker {
             System.out.println("PlayingCardException: " + e.getMessage());
         }
     }
-
+--------------------------------------------------------------------------------------------------------
     private boolean royalFlush(){
         int firstCardSuit = playerHand.get(0).getSuit();
         List<Integer> royalFlushRankList = Arrays.asList(1,10,11,12,13); // A, 10, J, Q, K
@@ -211,7 +209,7 @@ public class VideoPoker {
         }
         return true;
     }
-
+--------------------------------------------------------------------------------------------------------
     private boolean straightFlush(){
         int firstCardSuit = playerHand.get(0).getSuit();
         List<Integer> sortedCardRanks = new ArrayList<>();
@@ -233,7 +231,7 @@ public class VideoPoker {
 
         return true;
     }
-
+--------------------------------------------------------------------------------------------------------
     private boolean straight(){
         int firstCardSuit = playerHand.get(0).getSuit();
         List<Integer> sortedCardRanks = new ArrayList<>();
@@ -258,7 +256,7 @@ public class VideoPoker {
 
         return true;
     }
-
+--------------------------------------------------------------------------------------------------------
     private boolean flush(){
         int firstCardSuit = playerHand.get(0).getSuit();
         for(Card card : playerHand){
@@ -268,7 +266,7 @@ public class VideoPoker {
 
         return true;
     }
-
+--------------------------------------------------------------------------------------------------------
     private boolean fullHouse(){
         HashMap<Integer,Integer> rankMap = new HashMap<>();
 
@@ -284,7 +282,7 @@ public class VideoPoker {
 
         return rankMap.containsValue(3) && rankMap.containsValue(2);
     }
-
+--------------------------------------------------------------------------------------------------------
     private boolean ofAKind(int kindType){
         HashMap<Integer,Integer> rankMap = new HashMap<>();
 
@@ -300,7 +298,7 @@ public class VideoPoker {
 
         return rankMap.containsValue(kindType);
     }
-
+--------------------------------------------------------------------------------------------------------
     private boolean twoPair(){
         HashMap<Integer,Integer> rankMap = new HashMap<>();
         int pairCounter = 0;
@@ -318,7 +316,7 @@ public class VideoPoker {
 
         return pairCounter == 2 && rankMap.containsValue(1);
     }
-
+--------------------------------------------------------------------------------------------------------
     private boolean royalPair(){
         HashMap<Integer,Integer> rankMap = new HashMap<>();
         int pairCounter = 0;
@@ -338,7 +336,7 @@ public class VideoPoker {
         return pairCounter == 2 && rankMap.containsValue(1);
     }
 
-
+--------------------------------------------------------------------------------------------------------
     public void play() throws PlayingCardException {
         /** The main algorithm for single player poker game
          *
