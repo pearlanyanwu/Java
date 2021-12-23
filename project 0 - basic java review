@@ -1,5 +1,4 @@
 package SimplePackage;
-
 import java.util.*;
 
 public class Assignment0 {
