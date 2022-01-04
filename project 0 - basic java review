@@ -3,7 +3,9 @@
 // 2) Display the array onto the console.
 // 3) State the maximum and minimum values of the array.
 // 4) Sort the array in ascending order.
-// 5) Restate the maximum and minimum values of the array. ( Max and min should be the exact same as the values from step 3. )
+// 5) Restate the maximum and minimum values of the array. ( Max and min values should be the exact same as the values from step 3. )
+
+// Note: My work --> lines 63 - 98.
 
 package SimplePackage;
 import java.util.*;
