@@ -1,3 +1,13 @@
+// This program does the following:
+// 1) Arithmetic on fractions.
+// 2) Handle error(s)/exception(s) where the denominator is zero.
+// 2) Compute sums, differences, products, and quotes for other various sets of fractions.
+// 3) Check fraction equality and comparability.
+
+// Note: This program required an interface called FractionInteface.
+
+My contribution --> lines 13 - 169.
+
 package PJ1;
 
 public class Fraction implements FractionInterface, Comparable<Fraction>
