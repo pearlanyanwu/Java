@@ -1,5 +1,3 @@
-package PJ2;
-
 public class SimpleSet<T> implements SetInterface<T>
 {
     private ResizableArrayBag<T> aBag;
