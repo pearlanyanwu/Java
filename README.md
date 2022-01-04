@@ -3,4 +3,4 @@ Hi! Welcome to my profile! I was introduced to Java @ SF State in Fall 2021. The
 All projects written on IntelliJ Idea. ( Java IDE )
 
 Note: All projects were pre-coded by my professor.
-I will mark the beginning and ending of my contribuctions at the top of the code for each project.
+I will mark the start and end of my contributions at the top of the code for each project.
