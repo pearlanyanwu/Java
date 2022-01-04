@@ -1,7 +1,7 @@
 // This program does the following:
 // 1) Apply several methods to a bag (or set, list) of letters.
 // This program required an interface called SetInterface which contained information about each method.
-// The interface was downcasted to simpleSet.
+// SetInterface was downcasted to simpleSet.
 // My contribution --> lines 33 - 168
 
 public class SimpleSet<T> implements SetInterface<T>
