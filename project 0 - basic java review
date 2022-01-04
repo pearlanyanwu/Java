@@ -1,11 +1,11 @@
 // This program does the following:
-// 1) Create an array. ( size is determined by the integer inputted by the user. )
-// 2) Display the array onto the console.
-// 3) State the maximum and minimum values of the array.
+// 1) Prompt the user to enter an array size.
+// 2) Prompt the user to enter array values up to the size.
+// 2) Display the array's values.
+// 3) Display the array's maximum and minimum values.
 // 4) Sort the array in ascending order.
-// 5) Restate the maximum and minimum values of the array. ( Max and min values should be the exact same as the values from step 3. )
-
-// My contribution --> lines 63 - 98.
+// 5) Re-display the array's maximum and minimum values.
+// My contribution --> lines 60 - 95
 
 public class Assignment0 {
     // Data fields
@@ -84,7 +84,7 @@ public class Assignment0 {
     static int[] selectionSort(int[] B) {
         int temp;
         for (int i = 0; i < size; i++) { // for the leftmost index.
-            for (int j = i + 1; j < size; j++) { // for the rightmost index.
+            for (int j = i+1; j < size; j++) { // for the rightmost index.
                 if (B[i] > B[j]) {
                     temp = B[j]; // set the rightmost index to "temp".
                     B[j] = B[i]; // swap order of values when necessary.
