@@ -1,5 +1,9 @@
-import java.util.*;
-import java.io.*;
+// This program does the following:
+// 1) Read in a file name. (.txt)
+// 2) Prompt the user to enter one or more symptoms.
+// 3) Dsiplay all illnesses that share the symptom(s).
+// My contribution --> lines 46 - 162
+
 
 public class PhysiciansHelper {
 
