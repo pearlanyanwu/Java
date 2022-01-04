@@ -6,9 +6,7 @@
 
 // Note: This program required an interface called FractionInteface.
 
-My contribution --> lines 13 - 169.
-
-package PJ1;
+// My contribution --> lines 13 - 169.
 
 public class Fraction implements FractionInterface, Comparable<Fraction>
 {
