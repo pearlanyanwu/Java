@@ -1,9 +1,8 @@
 // This program does the following:
-// 1) Read in a file name. (.txt)
+// 1) Read in a text file. ( up to 3 )
 // 2) Prompt the user to enter one or more symptoms.
-// 3) Dsiplay all illnesses that share the symptom(s).
-// My contribution --> lines 46 - 162
-
+// 3) Display all illnesses, from all 3 files, that share the symptom(s).
+// My contribution --> lines 45 - 161
 
 public class PhysiciansHelper {
 
