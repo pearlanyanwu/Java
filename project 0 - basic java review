@@ -1,3 +1,10 @@
+// This program:
+// 1) Creates an array. ( size is determined by the integer inputted by the user. )
+// 2) Displays the array on to the console.
+// 3) States the maximum and minimum values of the array.
+// 4) Sorts the array in ascending order.
+// 5) Restates the maximum and minimum values of the array. ( Max and min should be the exact same as the values from step 3. )
+
 package SimplePackage;
 import java.util.*;
 
