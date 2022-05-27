@@ -1,7 +1,7 @@
 // This program does the following:
 // 1) Arithmetic on fractions.
 // 2) Handle error(s)/exception(s) where the denominator is zero.
-// 2) Compute sums, differences, products, and quotes for various sets of fractions.
+// 2) Compute sums, differences, products, and quotients for various sets of fractions.
 // 3) Check fraction equality and comparisons.
 // Note: This program required an interface called FractionInterface which was downcasted to Fraction.
 // My contribution --> lines 15 - 161.
